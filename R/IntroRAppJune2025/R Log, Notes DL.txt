@@ -1,0 +1,596 @@
+
+
+
+R version 4.5.1 (2025-06-13 ucrt) -- "Great Square Root"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd("c:/Proj/Languages/R/IntroRAppJune2025")
+> source("setup.R")
+=== R Introduction App Setup ===
+Installing required packages...
+
+Checking and installing packages:
+=====================================
+✓ shiny already installed
+
+Attaching package: ‘shinydashboard’
+
+The following object is masked from ‘package:graphics’:
+
+    box
+✓ shinydashboard already installed
+
+Attaching package: ‘DT’
+
+The following objects are masked from ‘package:shiny’:
+
+    dataTableOutput, renderDataTable
+✓ DT already installed
+Installing plotly ...
+also installing the dependencies ‘hexbin’, ‘ggthemes’, ‘GGally’, ‘ggalluvial’, ‘shinytest2’, ‘curl’, ‘broom’, ‘webshot’, ‘listviewer’, ‘dendextend’, ‘sf’, ‘png’, ‘IRdisplay’, ‘plotlyGeoAssets’, ‘forcats’, ‘palmerpenguins’, ‘rversions’, ‘reticulate’, ‘rsvg’, ‘ggridges’
+package ‘hexbin’ successfully unpacked and MD5 sums checked
+package ‘ggthemes’ successfully unpacked and MD5 sums checked
+package ‘GGally’ successfully unpacked and MD5 sums checked
+package ‘ggalluvial’ successfully unpacked and MD5 sums checked
+package ‘shinytest2’ successfully unpacked and MD5 sums checked
+package ‘curl’ successfully unpacked and MD5 sums checked
+package ‘broom’ successfully unpacked and MD5 sums checked
+package ‘webshot’ successfully unpacked and MD5 sums checked
+package ‘listviewer’ successfully unpacked and MD5 sums checked
+package ‘dendextend’ successfully unpacked and MD5 sums checked
+package ‘sf’ successfully unpacked and MD5 sums checked
+package ‘png’ successfully unpacked and MD5 sums checked
+package ‘IRdisplay’ successfully unpacked and MD5 sums checked
+package ‘plotlyGeoAssets’ successfully unpacked and MD5 sums checked
+package ‘forcats’ successfully unpacked and MD5 sums checked
+package ‘palmerpenguins’ successfully unpacked and MD5 sums checked
+package ‘rversions’ successfully unpacked and MD5 sums checked
+package ‘reticulate’ successfully unpacked and MD5 sums checked
+package ‘rsvg’ successfully unpacked and MD5 sums checked
+package ‘ggridges’ successfully unpacked and MD5 sums checked
+package ‘plotly’ successfully unpacked and MD5 sums checked
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+✓ plotly installed successfully
+Installing leaflet ...
+also installing the dependencies ‘leaflet.providers’, ‘raster’, ‘sp’, ‘RJSONIO’, ‘terra’
+package ‘leaflet.providers’ successfully unpacked and MD5 sums checked
+package ‘raster’ successfully unpacked and MD5 sums checked
+package ‘sp’ successfully unpacked and MD5 sums checked
+package ‘RJSONIO’ successfully unpacked and MD5 sums checked
+package ‘terra’ successfully unpacked and MD5 sums checked
+package ‘leaflet’ successfully unpacked and MD5 sums checked
+✓ leaflet installed successfully
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+✓ dplyr already installed
+✓ ggplot2 already installed
+✓ tidyr already installed
+Installing readr ...
+also installing the dependencies ‘bit’, ‘bit64’, ‘rex’, ‘hunspell’, ‘clipr’, ‘vroom’, ‘tzdb’, ‘covr’, ‘spelling’
+package ‘bit’ successfully unpacked and MD5 sums checked
+package ‘bit64’ successfully unpacked and MD5 sums checked
+package ‘rex’ successfully unpacked and MD5 sums checked
+package ‘hunspell’ successfully unpacked and MD5 sums checked
+package ‘clipr’ successfully unpacked and MD5 sums checked
+package ‘vroom’ successfully unpacked and MD5 sums checked
+package ‘tzdb’ successfully unpacked and MD5 sums checked
+package ‘covr’ successfully unpacked and MD5 sums checked
+package ‘spelling’ successfully unpacked and MD5 sums checked
+package ‘readr’ successfully unpacked and MD5 sums checked
+✓ readr installed successfully
+✓ stringr already installed
+Installing lubridate ...
+also installing the dependency ‘timechange’
+package ‘timechange’ successfully unpacked and MD5 sums checked
+package ‘lubridate’ successfully unpacked and MD5 sums checked
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+✓ lubridate installed successfully
+✓ purrr already installed
+✓ forcats already installed
+Installing corrplot ...
+also installing the dependencies ‘iterators’, ‘permute’, ‘ca’, ‘colorspace’, ‘foreach’, ‘gclus’, ‘qap’, ‘registry’, ‘TSP’, ‘vegan’, ‘seriation’, ‘prettydoc’
+package ‘iterators’ successfully unpacked and MD5 sums checked
+package ‘permute’ successfully unpacked and MD5 sums checked
+package ‘ca’ successfully unpacked and MD5 sums checked
+package ‘colorspace’ successfully unpacked and MD5 sums checked
+package ‘foreach’ successfully unpacked and MD5 sums checked
+package ‘gclus’ successfully unpacked and MD5 sums checked
+package ‘qap’ successfully unpacked and MD5 sums checked
+package ‘registry’ successfully unpacked and MD5 sums checked
+package ‘TSP’ successfully unpacked and MD5 sums checked
+package ‘vegan’ successfully unpacked and MD5 sums checked
+package ‘seriation’ successfully unpacked and MD5 sums checked
+package ‘prettydoc’ successfully unpacked and MD5 sums checked
+package ‘corrplot’ successfully unpacked and MD5 sums checked
+corrplot 0.95 loaded
+✓ corrplot installed successfully
+✓ ggthemes already installed
+
+Attaching package: ‘scales’
+
+The following object is masked from ‘package:purrr’:
+
+    discard
+
+The following object is masked from ‘package:readr’:
+
+    col_factor
+✓ scales already installed
+Installing moments ...
+package ‘moments’ successfully unpacked and MD5 sums checked
+✓ moments installed successfully
+Installing effectsize ...
+also installing the dependencies ‘cowplot’, ‘Deriv’, ‘modelr’, ‘microbenchmark’, ‘rbibutils’, ‘miniUI’, ‘igraph’, ‘doBy’, ‘elliptic’, ‘contfrac’, ‘deSolve’, ‘inline’, ‘QuickJSR’, ‘tensorA’, ‘distributional’, ‘Brobdingnag’, ‘V8’, ‘reactR’, ‘Rdpack’, ‘TH.data’, ‘sandwich’, ‘rstudioapi’, ‘colourpicker’, ‘gtools’, ‘shinyjs’, ‘shinythemes’, ‘threejs’, ‘modelbased’, ‘patchwork’, ‘pbkrtest’, ‘reshape2’, ‘coda’, ‘pbapply’, ‘mvtnorm’, ‘MatrixModels’, ‘hypergeo’, ‘RcppEigen’, ‘rstan’, ‘loo’, ‘posterior’, ‘bayesplot’, ‘bridgesampling’, ‘future.apply’, ‘matrixStats’, ‘nleqslv’, ‘abind’, ‘carData’, ‘Formula’, ‘quantreg’, ‘estimability’, ‘numDeriv’, ‘bigD’, ‘bitops’, ‘juicyjuice’, ‘reactable’, ‘mnormt’, ‘pbivnorm’, ‘quadprog’, ‘minqa’, ‘nloptr’, ‘reformulas’, ‘hardhat’, ‘sparsevctrs’, ‘Hmisc’, ‘SparseM’, ‘polspline’, ‘multcomp’, ‘htmlTable’, ‘shinystan’, ‘RcppParallel’, ‘StanHeaders’, ‘BH’, ‘bayestestR’, ‘insight’, ‘parameters’, ‘performance’, ‘datawizard’, ‘correlation’, ‘see’, ‘afex’, ‘BayesFactor’, ‘brms’, ‘car’, ‘emmeans’, ‘gt’, ‘lavaan’, ‘lme4’, ‘lmerTest’, ‘parsnip’, ‘pwr’, ‘rms’, ‘rstanarm’, ‘rstantools’
+
+  There is a binary version available but the source version is
+  later:
+          binary source needs_compilation
+patchwork  1.3.0  1.3.1             FALSE
+
+package ‘cowplot’ successfully unpacked and MD5 sums checked
+package ‘Deriv’ successfully unpacked and MD5 sums checked
+package ‘modelr’ successfully unpacked and MD5 sums checked
+package ‘microbenchmark’ successfully unpacked and MD5 sums checked
+package ‘rbibutils’ successfully unpacked and MD5 sums checked
+package ‘miniUI’ successfully unpacked and MD5 sums checked
+package ‘igraph’ successfully unpacked and MD5 sums checked
+package ‘doBy’ successfully unpacked and MD5 sums checked
+package ‘elliptic’ successfully unpacked and MD5 sums checked
+package ‘contfrac’ successfully unpacked and MD5 sums checked
+package ‘deSolve’ successfully unpacked and MD5 sums checked
+package ‘inline’ successfully unpacked and MD5 sums checked
+package ‘QuickJSR’ successfully unpacked and MD5 sums checked
+package ‘tensorA’ successfully unpacked and MD5 sums checked
+package ‘distributional’ successfully unpacked and MD5 sums checked
+package ‘Brobdingnag’ successfully unpacked and MD5 sums checked
+package ‘V8’ successfully unpacked and MD5 sums checked
+package ‘reactR’ successfully unpacked and MD5 sums checked
+package ‘Rdpack’ successfully unpacked and MD5 sums checked
+package ‘TH.data’ successfully unpacked and MD5 sums checked
+package ‘sandwich’ successfully unpacked and MD5 sums checked
+package ‘rstudioapi’ successfully unpacked and MD5 sums checked
+package ‘colourpicker’ successfully unpacked and MD5 sums checked
+package ‘gtools’ successfully unpacked and MD5 sums checked
+package ‘shinyjs’ successfully unpacked and MD5 sums checked
+package ‘shinythemes’ successfully unpacked and MD5 sums checked
+package ‘threejs’ successfully unpacked and MD5 sums checked
+package ‘modelbased’ successfully unpacked and MD5 sums checked
+package ‘pbkrtest’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘coda’ successfully unpacked and MD5 sums checked
+package ‘pbapply’ successfully unpacked and MD5 sums checked
+package ‘mvtnorm’ successfully unpacked and MD5 sums checked
+package ‘MatrixModels’ successfully unpacked and MD5 sums checked
+package ‘hypergeo’ successfully unpacked and MD5 sums checked
+package ‘RcppEigen’ successfully unpacked and MD5 sums checked
+package ‘rstan’ successfully unpacked and MD5 sums checked
+package ‘loo’ successfully unpacked and MD5 sums checked
+package ‘posterior’ successfully unpacked and MD5 sums checked
+package ‘bayesplot’ successfully unpacked and MD5 sums checked
+package ‘bridgesampling’ successfully unpacked and MD5 sums checked
+package ‘future.apply’ successfully unpacked and MD5 sums checked
+package ‘matrixStats’ successfully unpacked and MD5 sums checked
+package ‘nleqslv’ successfully unpacked and MD5 sums checked
+package ‘abind’ successfully unpacked and MD5 sums checked
+package ‘carData’ successfully unpacked and MD5 sums checked
+package ‘Formula’ successfully unpacked and MD5 sums checked
+package ‘quantreg’ successfully unpacked and MD5 sums checked
+package ‘estimability’ successfully unpacked and MD5 sums checked
+package ‘numDeriv’ successfully unpacked and MD5 sums checked
+package ‘bigD’ successfully unpacked and MD5 sums checked
+package ‘bitops’ successfully unpacked and MD5 sums checked
+package ‘juicyjuice’ successfully unpacked and MD5 sums checked
+package ‘reactable’ successfully unpacked and MD5 sums checked
+package ‘mnormt’ successfully unpacked and MD5 sums checked
+package ‘pbivnorm’ successfully unpacked and MD5 sums checked
+package ‘quadprog’ successfully unpacked and MD5 sums checked
+package ‘minqa’ successfully unpacked and MD5 sums checked
+package ‘nloptr’ successfully unpacked and MD5 sums checked
+package ‘reformulas’ successfully unpacked and MD5 sums checked
+package ‘hardhat’ successfully unpacked and MD5 sums checked
+package ‘sparsevctrs’ successfully unpacked and MD5 sums checked
+package ‘Hmisc’ successfully unpacked and MD5 sums checked
+package ‘SparseM’ successfully unpacked and MD5 sums checked
+package ‘polspline’ successfully unpacked and MD5 sums checked
+package ‘multcomp’ successfully unpacked and MD5 sums checked
+package ‘htmlTable’ successfully unpacked and MD5 sums checked
+package ‘shinystan’ successfully unpacked and MD5 sums checked
+package ‘RcppParallel’ successfully unpacked and MD5 sums checked
+package ‘StanHeaders’ successfully unpacked and MD5 sums checked
+package ‘BH’ successfully unpacked and MD5 sums checked
+package ‘bayestestR’ successfully unpacked and MD5 sums checked
+package ‘insight’ successfully unpacked and MD5 sums checked
+package ‘parameters’ successfully unpacked and MD5 sums checked
+package ‘performance’ successfully unpacked and MD5 sums checked
+package ‘datawizard’ successfully unpacked and MD5 sums checked
+package ‘correlation’ successfully unpacked and MD5 sums checked
+package ‘see’ successfully unpacked and MD5 sums checked
+package ‘afex’ successfully unpacked and MD5 sums checked
+package ‘BayesFactor’ successfully unpacked and MD5 sums checked
+package ‘brms’ successfully unpacked and MD5 sums checked
+package ‘car’ successfully unpacked and MD5 sums checked
+package ‘emmeans’ successfully unpacked and MD5 sums checked
+package ‘gt’ successfully unpacked and MD5 sums checked
+package ‘lavaan’ successfully unpacked and MD5 sums checked
+package ‘lme4’ successfully unpacked and MD5 sums checked
+package ‘lmerTest’ successfully unpacked and MD5 sums checked
+package ‘parsnip’ successfully unpacked and MD5 sums checked
+package ‘pwr’ successfully unpacked and MD5 sums checked
+package ‘rms’ successfully unpacked and MD5 sums checked
+package ‘rstanarm’ successfully unpacked and MD5 sums checked
+package ‘rstantools’ successfully unpacked and MD5 sums checked
+package ‘effectsize’ successfully unpacked and MD5 sums checked
+installing the source package ‘patchwork’
+✓ effectsize installed successfully
+✓ pwr already installed
+Installing caret ...
+also installing the dependencies ‘R.methodsS3’, ‘R.oo’, ‘R.utils’, ‘shape’, ‘progressr’, ‘SQUAREM’, ‘R.cache’, ‘haven’, ‘caTools’, ‘profileModel’, ‘plotrix’, ‘diagram’, ‘lava’, ‘styler’, ‘labelled’, ‘gplots’, ‘libcoin’, ‘clock’, ‘gower’, ‘timeDate’, ‘brglm’, ‘qvcalc’, ‘plotmo’, ‘prodlim’, ‘combinat’, ‘questionr’, ‘ROCR’, ‘modeltools’, ‘strucchange’, ‘coin’, ‘ROSE’, ‘ModelMetrics’, ‘pROC’, ‘recipes’, ‘BradleyTerry2’, ‘Cubist’, ‘earth’, ‘ellipse’, ‘fastICA’, ‘gam’, ‘ipred’, ‘kernlab’, ‘klaR’, ‘mda’, ‘mlbench’, ‘MLmetrics’, ‘pamr’, ‘party’, ‘pls’, ‘randomForest’, ‘RANN’, ‘spls’, ‘superpc’, ‘themis’
+package ‘R.methodsS3’ successfully unpacked and MD5 sums checked
+package ‘R.oo’ successfully unpacked and MD5 sums checked
+package ‘R.utils’ successfully unpacked and MD5 sums checked
+package ‘shape’ successfully unpacked and MD5 sums checked
+package ‘progressr’ successfully unpacked and MD5 sums checked
+package ‘SQUAREM’ successfully unpacked and MD5 sums checked
+package ‘R.cache’ successfully unpacked and MD5 sums checked
+package ‘haven’ successfully unpacked and MD5 sums checked
+package ‘caTools’ successfully unpacked and MD5 sums checked
+package ‘profileModel’ successfully unpacked and MD5 sums checked
+package ‘plotrix’ successfully unpacked and MD5 sums checked
+package ‘diagram’ successfully unpacked and MD5 sums checked
+package ‘lava’ successfully unpacked and MD5 sums checked
+package ‘styler’ successfully unpacked and MD5 sums checked
+package ‘labelled’ successfully unpacked and MD5 sums checked
+package ‘gplots’ successfully unpacked and MD5 sums checked
+package ‘libcoin’ successfully unpacked and MD5 sums checked
+package ‘clock’ successfully unpacked and MD5 sums checked
+package ‘gower’ successfully unpacked and MD5 sums checked
+package ‘timeDate’ successfully unpacked and MD5 sums checked
+package ‘brglm’ successfully unpacked and MD5 sums checked
+package ‘qvcalc’ successfully unpacked and MD5 sums checked
+package ‘plotmo’ successfully unpacked and MD5 sums checked
+package ‘prodlim’ successfully unpacked and MD5 sums checked
+package ‘combinat’ successfully unpacked and MD5 sums checked
+package ‘questionr’ successfully unpacked and MD5 sums checked
+package ‘ROCR’ successfully unpacked and MD5 sums checked
+package ‘modeltools’ successfully unpacked and MD5 sums checked
+package ‘strucchange’ successfully unpacked and MD5 sums checked
+package ‘coin’ successfully unpacked and MD5 sums checked
+package ‘ROSE’ successfully unpacked and MD5 sums checked
+package ‘ModelMetrics’ successfully unpacked and MD5 sums checked
+package ‘pROC’ successfully unpacked and MD5 sums checked
+package ‘recipes’ successfully unpacked and MD5 sums checked
+package ‘BradleyTerry2’ successfully unpacked and MD5 sums checked
+package ‘Cubist’ successfully unpacked and MD5 sums checked
+package ‘earth’ successfully unpacked and MD5 sums checked
+package ‘ellipse’ successfully unpacked and MD5 sums checked
+package ‘fastICA’ successfully unpacked and MD5 sums checked
+package ‘gam’ successfully unpacked and MD5 sums checked
+package ‘ipred’ successfully unpacked and MD5 sums checked
+package ‘kernlab’ successfully unpacked and MD5 sums checked
+package ‘klaR’ successfully unpacked and MD5 sums checked
+package ‘mda’ successfully unpacked and MD5 sums checked
+package ‘mlbench’ successfully unpacked and MD5 sums checked
+package ‘MLmetrics’ successfully unpacked and MD5 sums checked
+package ‘pamr’ successfully unpacked and MD5 sums checked
+package ‘party’ successfully unpacked and MD5 sums checked
+package ‘pls’ successfully unpacked and MD5 sums checked
+package ‘randomForest’ successfully unpacked and MD5 sums checked
+package ‘RANN’ successfully unpacked and MD5 sums checked
+package ‘spls’ successfully unpacked and MD5 sums checked
+package ‘superpc’ successfully unpacked and MD5 sums checked
+package ‘themis’ successfully unpacked and MD5 sums checked
+package ‘caret’ successfully unpacked and MD5 sums checked
+
+Attaching package: ‘caret’
+
+The following object is masked from ‘package:purrr’:
+
+    lift
+✓ caret installed successfully
+Installing glmnet ...
+also installing the dependency ‘lars’
+package ‘lars’ successfully unpacked and MD5 sums checked
+package ‘glmnet’ successfully unpacked and MD5 sums checked
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loaded glmnet 4.1-9
+✓ glmnet installed successfully
+randomForest 4.7-1.2
+Type rfNews() to see new features/changes/bug fixes.
+
+Attaching package: ‘randomForest’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+The following object is masked from ‘package:ggplot2’:
+
+    margin
+✓ randomForest already installed
+
+Attaching package: ‘jsonlite’
+
+The following object is masked from ‘package:purrr’:
+
+    flatten
+
+The following object is masked from ‘package:shiny’:
+
+    validate
+✓ jsonlite already installed
+
+Attaching package: ‘httr’
+
+The following object is masked from ‘package:caret’:
+
+    progress
+
+The following object is masked from ‘package:plotly’:
+
+    config
+✓ httr already installed
+Installing readxl ...
+also installing the dependencies ‘rematch’, ‘cellranger’
+package ‘rematch’ successfully unpacked and MD5 sums checked
+package ‘cellranger’ successfully unpacked and MD5 sums checked
+package ‘readxl’ successfully unpacked and MD5 sums checked
+✓ readxl installed successfully
+✓ haven already installed
+✓ knitr already installed
+Installing kableExtra ...
+also installing the dependencies ‘svglite’, ‘magick’, ‘formattable’, ‘sparkline’, ‘webshot2’
+package ‘svglite’ successfully unpacked and MD5 sums checked
+package ‘magick’ successfully unpacked and MD5 sums checked
+package ‘formattable’ successfully unpacked and MD5 sums checked
+package ‘sparkline’ successfully unpacked and MD5 sums checked
+package ‘webshot2’ successfully unpacked and MD5 sums checked
+package ‘kableExtra’ successfully unpacked and MD5 sums checked
+
+Attaching package: ‘kableExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    group_rows
+✓ kableExtra installed successfully
+here() starts at C:/Proj/Languages/R/IntroRAppJune2025
+✓ here already installed
+Installing usethis ...
+also installing the dependencies ‘credentials’, ‘gitcreds’, ‘httr2’, ‘ini’, ‘brew’, ‘gert’, ‘gh’, ‘whisker’, ‘roxygen2’
+package ‘credentials’ successfully unpacked and MD5 sums checked
+package ‘gitcreds’ successfully unpacked and MD5 sums checked
+package ‘httr2’ successfully unpacked and MD5 sums checked
+package ‘ini’ successfully unpacked and MD5 sums checked
+package ‘brew’ successfully unpacked and MD5 sums checked
+package ‘gert’ successfully unpacked and MD5 sums checked
+package ‘gh’ successfully unpacked and MD5 sums checked
+package ‘whisker’ successfully unpacked and MD5 sums checked
+package ‘roxygen2’ successfully unpacked and MD5 sums checked
+package ‘usethis’ successfully unpacked and MD5 sums checked
+✓ usethis installed successfully
+
+Installing tidyverse meta-package...
+Installing tidyverse ...
+also installing the dependencies ‘blob’, ‘gargle’, ‘uuid’, ‘ids’, ‘rematch2’, ‘selectr’, ‘conflicted’, ‘dbplyr’, ‘dtplyr’, ‘googledrive’, ‘googlesheets4’, ‘reprex’, ‘rvest’, ‘feather’, ‘mockr’
+package ‘blob’ successfully unpacked and MD5 sums checked
+package ‘gargle’ successfully unpacked and MD5 sums checked
+package ‘uuid’ successfully unpacked and MD5 sums checked
+package ‘ids’ successfully unpacked and MD5 sums checked
+package ‘rematch2’ successfully unpacked and MD5 sums checked
+package ‘selectr’ successfully unpacked and MD5 sums checked
+package ‘conflicted’ successfully unpacked and MD5 sums checked
+package ‘dbplyr’ successfully unpacked and MD5 sums checked
+package ‘dtplyr’ successfully unpacked and MD5 sums checked
+package ‘googledrive’ successfully unpacked and MD5 sums checked
+package ‘googlesheets4’ successfully unpacked and MD5 sums checked
+package ‘reprex’ successfully unpacked and MD5 sums checked
+package ‘rvest’ successfully unpacked and MD5 sums checked
+package ‘feather’ successfully unpacked and MD5 sums checked
+package ‘mockr’ successfully unpacked and MD5 sums checked
+package ‘tidyverse’ successfully unpacked and MD5 sums checked
+── Attaching core tidyverse packages ──────────────── tidyverse 2.0.0 ──
+✔ tibble 3.3.0     
+── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+✖ scales::col_factor()     masks readr::col_factor()
+✖ randomForest::combine()  masks dplyr::combine()
+✖ httr::config()           masks plotly::config()
+✖ scales::discard()        masks purrr::discard()
+✖ Matrix::expand()         masks tidyr::expand()
+✖ dplyr::filter()          masks plotly::filter(), stats::filter()
+✖ jsonlite::flatten()      masks purrr::flatten()
+✖ kableExtra::group_rows() masks dplyr::group_rows()
+✖ dplyr::lag()             masks stats::lag()
+✖ caret::lift()            masks purrr::lift()
+✖ randomForest::margin()   masks ggplot2::margin()
+✖ Matrix::pack()           masks tidyr::pack()
+✖ httr::progress()         masks caret::progress()
+✖ Matrix::unpack()         masks tidyr::unpack()
+✖ jsonlite::validate()     masks shiny::validate()
+ℹ Use the conflicted package to force all conflicts to become errors
+✓ tidyverse installed successfully
+
+=== Verification ===
+✓ shiny loaded successfully
+✓ dplyr loaded successfully
+✓ ggplot2 loaded successfully
+✓ DT loaded successfully
+✓ plotly loaded successfully
+
+🎉 Setup completed successfully!
+You can now run the app with: shiny::runApp()
+
+=== System Information ===
+R version: R version 4.5.1 (2025-06-13 ucrt) 
+Platform: x86_64-w64-mingw32 
+Working directory: c:/Proj/Languages/R/IntroRAppJune2025 
+RStudio detected ✓
+
+=== Next Steps ===🧠🧠🧠🧠
+1. Run: shiny::runApp() to start the application
+2. Or open app.R in RStudio and click 'Run App'
+3. Explore the different tabs to learn R!
+> 
+
+
+
+
+
+
+
+
+
+
+* Installing R Package Dependencies for Publishing: 'packrat', 'rsconnect'
+
+
+
+[1/5] Installing packrat...
+
+Installing package into 'C:/Users/deege/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+trying URL 'https://cran.rstudio.com/src/contrib/packrat_0.9.3.tar.gz'
+Content type 'application/x-gzip' length 378425 bytes (369 KB)
+==================================================
+downloaded 369 KB
+
+* installing *source* package 'packrat' ...
+** this is package 'packrat' version '0.9.3'
+** package 'packrat' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (packrat)
+
+
+[2/5] Installing PKI...
+
+
+The downloaded source packages are in
+	'C:\Users\deege\AppData\Local\Temp\RtmpqEeYp6\downloaded_packages'
+Installing package into 'C:/Users/deege/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.5/PKI_0.1-14.zip'
+Content type 'application/zip' length 2285926 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+package 'PKI' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\deege\AppData\Local\Temp\RtmpqEeYp6\downloaded_packages
+
+
+[3/5] Installing renv...
+
+Installing package into 'C:/Users/deege/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.5/renv_1.1.4.zip'
+Content type 'application/zip' length 2326500 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+package 'renv' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\deege\AppData\Local\Temp\RtmpqEeYp6\downloaded_packages
+
+
+[4/5] Installing jose...
+
+Installing package into 'C:/Users/deege/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.5/jose_1.2.1.zip'
+Content type 'application/zip' length 476098 bytes (464 KB)
+==================================================
+downloaded 464 KB
+
+package 'jose' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\deege\AppData\Local\Temp\RtmpqEeYp6\downloaded_packages
+
+
+[5/5] Installing rsconnect...
+
+Installing package into 'C:/Users/deege/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+trying URL 'https://cran.rstudio.com/src/contrib/rsconnect_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 495727 bytes (484 KB)
+==================================================
+downloaded 484 KB
+
+* installing *source* package 'rsconnect' ...
+** this is package 'rsconnect' version '1.4.2'
+** package 'rsconnect' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rsconnect)
+
+The downloaded source packages are in
+	'C:\Users\deege\AppData\Local\Temp\RtmpqEeYp6\downloaded_packages'
+
+
+✔ Packages successfully installed.

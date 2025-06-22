@@ -1,0 +1,50 @@
+# Required R Packages for Comprehensive R Introduction App
+# Install these packages before running the application
+
+# Core Shiny packages
+shiny
+shinydashboard
+
+# Data manipulation and visualization (Tidyverse)
+dplyr
+ggplot2
+tidyr
+readr
+stringr
+lubridate
+purrr
+forcats
+
+# Interactive components
+DT
+plotly
+leaflet
+
+# Statistical analysis
+corrplot
+moments
+effectsize
+pwr
+
+# Machine learning and modeling
+caret
+glmnet
+randomForest
+
+# Additional visualization
+ggthemes
+scales
+
+# Data import/export
+jsonlite
+httr
+readxl
+haven
+
+# Document generation
+knitr
+kableExtra
+
+# Utility packages
+here
+usethis

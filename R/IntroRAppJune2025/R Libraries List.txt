@@ -1,0 +1,89 @@
+# Popular R Libraries Ecosystem
+
+# === Data Manipulation & Analysis ===
+library(dplyr)      # Grammar of data manipulation
+library(tidyr)      # Tidy data principles
+library(data.table) # Fast data manipulation
+library(dtplyr)     # dplyr backend for data.table
+
+# === Data Import/Export ===
+library(readr)      # Fast reading of rectangular data
+library(readxl)     # Read Excel files
+library(haven)      # SPSS, Stata, SAS files
+library(jsonlite)   # JSON parser
+library(xml2)       # XML parser
+library(httr)       # HTTP requests
+
+# === Data Visualization ===
+library(ggplot2)    # Grammar of graphics
+library(plotly)     # Interactive plots
+library(leaflet)    # Interactive maps
+library(DT)         # Interactive tables
+library(corrplot)   # Correlation matrices
+library(ggthemes)   # Additional ggplot themes
+library(gganimate)  # Animated plots
+
+# === Web Applications ===
+library(shiny)      # Web applications
+library(shinydashboard) # Dashboard layouts
+library(flexdashboard)  # R Markdown dashboards
+
+# === Statistical Modeling ===
+library(caret)      # Classification and regression
+library(randomForest) # Random forest algorithm
+library(glmnet)     # Regularized linear models
+library(survival)   # Survival analysis
+library(nlme)       # Mixed-effects models
+
+# === Machine Learning ===
+library(tidymodels) # Unified ML framework
+library(torch)      # Deep learning
+library(tensorflow) # TensorFlow interface
+library(reticulate) # Python integration
+
+# === Time Series ===
+library(forecast)   # Time series forecasting
+library(tsibble)    # Tidy time series
+library(lubridate)  # Date/time manipulation
+
+# === Text Analysis ===
+library(stringr)    # String manipulation
+library(tm)         # Text mining
+library(tidytext)   # Tidy text analysis
+library(quanteda)   # Quantitative text analysis
+
+# === Functional Programming ===
+library(purrr)      # Functional programming tools
+library(furrr)      # Parallel purrr
+
+# === Database Connectivity ===
+library(DBI)        # Database interface
+library(odbc)       # ODBC connectivity
+library(RPostgreSQL) # PostgreSQL
+library(RSQLite)    # SQLite
+
+# === Reproducible Research ===
+library(rmarkdown)  # Dynamic documents
+library(knitr)      # Document generation
+library(here)       # Project-relative paths
+library(usethis)    # Package development
+
+# === Performance ===
+library(Rcpp)       # C++ integration
+library(parallel)   # Parallel computing
+library(doParallel) # Parallel backends
+
+# Example: Using multiple libraries together
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+plot <- mtcars %>%
+  mutate(efficiency = ifelse(mpg > 20, 'High', 'Low')) %>%
+  ggplot(aes(x = wt, y = mpg, color = efficiency)) +
+  geom_point(size = 3) +
+  labs(title = 'Car Weight vs MPG') +
+  theme_minimal()
+
+# Make it interactive
+ggplotly(plot)
